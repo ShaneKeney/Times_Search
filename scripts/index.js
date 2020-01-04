@@ -9,14 +9,14 @@ $(document).ready(function() {
         //do nothing if there is no search term
         if($("#search-term").val() === "") return;
 
-        if($("#start-year").val() && $("#end-year").val()) {
+        if($("#start-year").val() !== "" && $("#end-year").val() !== "") {
             //do queryAll search
             console.log('queryAll');
             queryAll();
-        } else if($("#start-year").val()) {
+        } else if($("#start-year").val() !== "") {
             //do single start year query
             console.log("start year only");
-        } else if($("#end-year").val()) {
+        } else if($("#end-year").val() !== "") {
             //do single end year query
             console.log("start end only");
         } else {
