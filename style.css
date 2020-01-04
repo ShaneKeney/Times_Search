@@ -1,7 +1,13 @@
+body {
+    font-family:'Times New Roman', Times, serif;
+}
 header, .card {
     width:80%;
     margin-right:auto;
     margin-left:auto;
+}
+.jumbotron {
+    margin-bottom:40px;
 }
 
 .jumbotron, .card-header, .btn-search, .btn-clear {
@@ -9,7 +15,7 @@ header, .card {
     color:white;
     font-weight:bold;
     border:none;
-    box-shadow:1px,2px,1px,2px;
+    box-shadow:1px 2px 1px 2px gray;
 }
 
 input, select {
@@ -26,5 +32,9 @@ form {
 }
 
 .btn-search:hover {
-    background-color:rgb(86, 228, 169);
+    background-color:rgb(32, 114, 80);
+}
+
+.btn-clear {
+    margin-left:20px;
 }
