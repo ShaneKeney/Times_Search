@@ -1,8 +1,29 @@
 var apiKey = "api-key=K5yXDyKWAGaa7d3N8d3Z1vBxZvfp3u92";
 var baseURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
 
-$(document).ready(() => {
-    
+$(document).ready(function() {
+    //add event listener for search button
+    $("#searchArticles").on("click", function(event) {
+        event.preventDefault();
+
+        //do nothing if there is no search term
+        if($("#search-term").val() === "") return;
+
+        if($("#start-year").val() && $("#end-year").val()) {
+            //do queryAll search
+            console.log('queryAll');
+            queryAll();
+        } else if($("#start-year").val()) {
+            //do single start year query
+            console.log("start year only");
+        } else if($("#end-year").val()) {
+            //do single end year query
+            console.log("start end only");
+        } else {
+            //do search term query only
+            console.log("search term alone");
+        }
+    });
 });
 
 function queryAll() {
@@ -20,6 +41,3 @@ function queryAll() {
         console.log(response);
     });
 }
-
-console.log('opened');
-queryAll();
