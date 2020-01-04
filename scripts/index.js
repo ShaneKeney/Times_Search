@@ -7,7 +7,7 @@ function queryAll() {
     let startYear = "2009";
     let endYear = "2010";
 
-    let queryBuilder = `${baseURL}q=${searchTermPlaceholder}&begin_date=${endYear}&end_date=${startYear}&${apiKey}`;
+    let queryBuilder = `${baseURL}q=${searchTermPlaceholder}&begin_date=${startYear}1231&end_date=${endYear}0101&${apiKey}`;
 
     $.ajax({
         url: queryBuilder,
