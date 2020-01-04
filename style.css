@@ -3,21 +3,28 @@ header, .card {
     margin-right:auto;
     margin-left:auto;
 }
-.jumbotron, .card-header, .btn-search {
+
+.jumbotron, .card-header, .btn-search, .btn-clear {
     background-color:navy;
     color:white;
     font-weight:bold;
+    border:none;
+    box-shadow:1px,2px,1px,2px;
 }
 
 input, select {
     width:90%;
 }
+
 form {
     font-weight:bold;
 }
 
 .top-articles {
     margin-top:40px;
-    margin-bottom:40px;
-    
+    margin-bottom:40px;   
+}
+
+.btn-search:hover {
+    background-color:rgb(86, 228, 169);
 }
