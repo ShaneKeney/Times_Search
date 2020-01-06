@@ -38,3 +38,38 @@ form {
 .btn-clear {
     margin-left:20px;
 }
+
+.articleIndicator {
+    background-color: lightgray;
+    padding-right: 4px;
+    padding-left: 4px;
+    margin-right: 5px;
+
+    border-radius: 2px;
+    
+    margin-bottom: 0px;
+}
+
+.headerText {
+    font-size: 1.5em;
+
+    margin: 0;
+}
+
+.articleContainer {
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(228, 221, 221);
+
+    margin-bottom: 5px;
+}
+
+.dateTime {
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.author {
+    font-weight: bold;
+}
