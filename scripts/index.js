@@ -81,19 +81,14 @@ function renderArticleInfo(articles) {
     });
 }
 
-var searchWord = "trump";
-var noofRecords = 3;
-
-//you can pass the input field of years and then concatenate lets say "0101" to strtyear and "1231" to endYear
-//because the begin_date and end_date filters in the API accepts only dates in the format yyyymmdd 
-// var strtYear = strtYear + "0101"
-// var endYear = endYear + "1231"
-var strtYear = 20200101; 
-var endYear = 20191231; 
-
+//the function to query with optional start year
 function withStrtYear(){
-    
-    var queryURL = baseURL + "q=" + searchWord + "&begin_date=" + strtYear + "&" + apiKey ;
+    var searchWord = $("#search-term").val().trim();
+    var noofRecords = $("#numberOfRecords").val();
+    var strtYear = $("#start-year").val().trim();
+    var content = []; 
+
+    var queryURL = baseURL + "q=" + searchWord + "&begin_date=" + strtYear + "0101&" + apiKey ;
     
     $.ajax({
     url: queryURL,
@@ -102,29 +97,34 @@ function withStrtYear(){
 
     .then(function(response) {
         
-        console.log(response.response.docs);
         for(var i=0;i<noofRecords;i++){
-        console.log(response.response.docs[i]);  
+            content.push(response.response.docs[i]);  
         }
+        renderArticleInfo(content);
         
     });
 }
 
+//the function to query with optional end year
 function withEndYear(){
-    
-var queryURL = baseURL + "q=" + searchWord + "&end_date=" + endYear + "&" + apiKey ;
+
+    var searchWord = $("#search-term").val().trim();
+    var noofRecords = $("#numberOfRecords").val();
+    var endYear = $("#end-year").val().trim();
+    var content = []; 
+
+    var queryURL = baseURL + "q=" + searchWord + "&end_date=" + endYear + "1231&" + apiKey ;
     
     $.ajax({
     url: queryURL,
     method: "GET"
     })
+    
     .then(function(response) {
-        
-        console.log(response.response.docs);
         for(var i=0;i<noofRecords;i++){
-        console.log(response.response.docs[i]);  
+            content.push(response.response.docs[i]);  
         }
-        
+        renderArticleInfo(content);
     });
 }
 
